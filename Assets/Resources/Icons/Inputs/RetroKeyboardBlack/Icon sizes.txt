@@ -1,0 +1,17 @@
+If the key is not listed here its size is the default 16*16
+
+------------------------------
+F10: 19*16 pixels
+F11: 19*16 pixels
+F12: 19*16 pixels
+Big Enter: 32*32 pixels
+Del: 19*16 pixels
+Back: 19*16 pixels
+Enter: 27*16 pixels
+Enter Icon: 24*16 pixels
+Control: 20*16 pixels
+Alt: 19*16 pixels
+Space: 80*16 pixels
+Shift: 24*16 pixels
+Caps: 22*16 pixels
+Tab:  27*16 pixels
