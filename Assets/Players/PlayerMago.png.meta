@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e542214a7c194fa44a7270ece7d260b1
+guid: c4e2abbfe32fd6e42b4142d7cd1e608b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 113, w: 13}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doc_0
+      name: PlayerMago_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 16
+        width: 14
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58eda2a13b0a8b24ab85d12cc14d9aec
-      internalID: 1384124204
+      spriteID: 3faff1c19d4169d4398ef2991de748a8
+      internalID: -2044195152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_1
+      name: PlayerMago_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 18
         y: 0
-        width: 16
-        height: 19
+        width: 14
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d49f67d713cea240bee4686883a6721
-      internalID: 5261011
+      spriteID: 0ee6a94c7832bba478e4a29392069ed1
+      internalID: 1751943589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_2
+      name: PlayerMago_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e7e93ebd5b80c43b91c8e57f1d4e59
-      internalID: 457591882
+      spriteID: 200ee82effc9f914eb9076b7926d8522
+      internalID: 316874682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_3
+      name: PlayerMago_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 50
         y: 0
-        width: 16
-        height: 19
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f40c96a242b3034c90331b1dec132c4
-      internalID: -411272311
+      spriteID: 0ae0275735c2262429d78e3daa884dd8
+      internalID: -21125589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_4
+      name: PlayerMago_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad2192063384e54409b65e58edd3d5b7
-      internalID: -1748022073
+      spriteID: 7fddd4bd90d04364bb5ab6b5bc1384f3
+      internalID: -1482561690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_5
+      name: PlayerMago_5
       rect:
         serializedVersion: 2
-        x: 80
+        x: 82
         y: 0
-        width: 16
-        height: 19
+        width: 14
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b82b6e20481ad15409ae1da25a945ef8
-      internalID: 448314422
+      spriteID: fbe44ff2b056cee4d83a2ceb2ac177f0
+      internalID: -1730224781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_6
+      name: PlayerMago_6
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 945e0a54f37b8bd4b9b4672400eb8774
-      internalID: 346627013
+      spriteID: 2839ed1d0b3c9494393302652146cba7
+      internalID: 641717615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_7
+      name: PlayerMago_7
       rect:
         serializedVersion: 2
         x: 112
         y: 0
         width: 16
-        height: 19
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab7d71911404a1d4aaacf3594e707524
-      internalID: 561377021
+      spriteID: 100452d3515cd0545ae9e480c4eb85d6
+      internalID: 1174734773
       vertices: []
       indices: 
       edges: []
@@ -276,21 +276,21 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      doc_0: 1384124204
-      doc_1: 5261011
-      doc_2: 457591882
-      doc_3: -411272311
-      doc_4: -1748022073
-      doc_5: 448314422
-      doc_6: 346627013
-      doc_7: 561377021
+      PlayerMago_0: -2044195152
+      PlayerMago_1: 1751943589
+      PlayerMago_2: 316874682
+      PlayerMago_3: -21125589
+      PlayerMago_4: -1482561690
+      PlayerMago_5: -1730224781
+      PlayerMago_6: 641717615
+      PlayerMago_7: 1174734773
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

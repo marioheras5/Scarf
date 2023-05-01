@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e542214a7c194fa44a7270ece7d260b1
+guid: e85e64779be8a654896901969227da83
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 113, w: 13}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doc_0
+      name: PlayerDino_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
+        width: 15
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58eda2a13b0a8b24ab85d12cc14d9aec
-      internalID: 1384124204
+      spriteID: 9bb19bdd1c46606478c4114324813c35
+      internalID: 1256384757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_1
+      name: PlayerDino_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 17
         y: 0
-        width: 16
+        width: 15
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d49f67d713cea240bee4686883a6721
-      internalID: 5261011
+      spriteID: af54e657463a3f943a587bf1ecc84bf2
+      internalID: 1399137303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_2
+      name: PlayerDino_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 16
-        height: 19
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59e7e93ebd5b80c43b91c8e57f1d4e59
-      internalID: 457591882
+      spriteID: b89e4f80cbd95c84fa4a2217b968e15f
+      internalID: -2141723709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_3
+      name: PlayerDino_3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 49
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,19 +182,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f40c96a242b3034c90331b1dec132c4
-      internalID: -411272311
+      spriteID: 729fdf133f50f964d85fb4f45756adc2
+      internalID: 642283220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_4
+      name: PlayerDino_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 65
         y: 0
-        width: 16
+        width: 15
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad2192063384e54409b65e58edd3d5b7
-      internalID: -1748022073
+      spriteID: f2ab9ff517ccf3d43af1292470815e0f
+      internalID: 1991160498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_5
+      name: PlayerDino_5
       rect:
         serializedVersion: 2
-        x: 80
+        x: 81
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b82b6e20481ad15409ae1da25a945ef8
-      internalID: 448314422
+      spriteID: c56e2dabbe31d674fbdff09d44ced75f
+      internalID: -2070260208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_6
+      name: PlayerDino_6
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 945e0a54f37b8bd4b9b4672400eb8774
-      internalID: 346627013
+      spriteID: b55d08bebc481ab4181a824b27c4023a
+      internalID: -212441485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doc_7
+      name: PlayerDino_7
       rect:
         serializedVersion: 2
-        x: 112
+        x: 113
         y: 0
-        width: 16
-        height: 19
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab7d71911404a1d4aaacf3594e707524
-      internalID: 561377021
+      spriteID: dd7f5e9135d72eb4393749eb522a610d
+      internalID: 776811032
       vertices: []
       indices: 
       edges: []
@@ -276,21 +276,21 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      doc_0: 1384124204
-      doc_1: 5261011
-      doc_2: 457591882
-      doc_3: -411272311
-      doc_4: -1748022073
-      doc_5: 448314422
-      doc_6: 346627013
-      doc_7: 561377021
+      PlayerDino_0: 1256384757
+      PlayerDino_1: 1399137303
+      PlayerDino_2: -2141723709
+      PlayerDino_3: 642283220
+      PlayerDino_4: 1991160498
+      PlayerDino_5: -2070260208
+      PlayerDino_6: -212441485
+      PlayerDino_7: 776811032
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
