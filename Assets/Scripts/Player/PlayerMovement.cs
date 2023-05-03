@@ -18,12 +18,26 @@ public class PlayerMovement : MonoBehaviour
     bool canDash = true;
     bool isDashing = false;
     public Animator animator;
+    public TrailRenderer tr;
     public Rigidbody2D rb;
 
     // Update is called once per frame
     void Update()
     {
         if (rb == null || animator == null || isDashing) return;
+
+        // Cursor dirección
+        Vector3 mousePos = Input.mousePosition;
+        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
+        } 
+        else
+        {
+            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
+        }
+
         // Movimiento
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -39,9 +53,11 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator Dash()
     {
+        tr.emitting = true;
         canDash = false;
         rb.velocity = movement * dashForce;
         yield return new WaitForSeconds(dashTime);
+        tr.emitting = false;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;

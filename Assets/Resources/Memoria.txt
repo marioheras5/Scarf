@@ -1,0 +1,24 @@
+Dia 1 (Menu)
+Obtenemos diseños y sprites de internet.
+Analizamos requisitos
+Compatibilizacion con VS (preferences, external tolos, visual studio)
+Creamos un menú con piezas separads y le metemos un script
+El script en función del tag del objeto (click objeto, lista de tags, creas tag, lo añades) pues lo detecta y le hace lo correspondiente (escalarlo un poco para que sea mas grande, o mover la flechita-espada
+
+
+Dia 2 (Movimiento)
+Añadimos un Sprite de un personaje, le metemos animaciones con el animation studio
+Le metemos movimiento y con eso una animación, normalizamos el movimiento para que en diagonal no se sumen los vectores de velocidades.
+Ya he hecho el dash usando una corrutina 
+Planeamos los personajes… 
+4 personajes, cada uno tiene su habilidad especial:
+-	Knight (Clava espada y hace terremoto)
+-	Plague doc (Veneno dots)
+-	Dino (Buff velocidad y daño)
+-	Mago (Bola de fuego)
+Hay que hacer escenarios, sacar los 4 personajes y hacer los controles básicos 
+
+Dia 3 (Documentacion)
+Pues hacemos docs, poco mas
+
+Dia 4 (Armas, combate)
