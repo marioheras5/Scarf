@@ -1,3 +1,9 @@
+Biblio:
+(Unity el mas usado indie)
+https://www.gamedeveloper.com/production/which-are-the-most-commonly-used-game-engines-
+
+
+
 Dia 1 (Menu)
 Obtenemos diseños y sprites de internet.
 Analizamos requisitos
@@ -22,3 +28,9 @@ Dia 3 (Documentacion)
 Pues hacemos docs, poco mas
 
 Dia 4 (Armas, combate)
+Creamos animaciones para 2 armas, a distancia (Baston) y espada (mele)
+Creamos el ataque con melee, el metodo de equipweapon
+hacemos la animacion de la espada y el tiempo de ataque
+ahora hacemos que el pj sea izq o der en funcion del raton
+el baston tmbien tira bolita y carga el ataque
+no esta terminado del todo
