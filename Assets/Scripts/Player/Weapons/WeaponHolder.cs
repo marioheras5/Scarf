@@ -12,7 +12,7 @@ public class WeaponHolder : MonoBehaviour
     void Start()
     {
         DesactivarArmas();
-        EquipWeapon("Baston");
+        EquipWeapon("Espada");
     }
     // Update is called once per frame
     void Update()
