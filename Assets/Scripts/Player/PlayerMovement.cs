@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb == null || animator == null || isDashing) return;
+        if (rb == null || animator == null) return;
 
         // Cursor dirección
         Vector3 mousePos = Input.mousePosition;
@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
         }
 
+        if (isDashing) return;
         // Movimiento
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");

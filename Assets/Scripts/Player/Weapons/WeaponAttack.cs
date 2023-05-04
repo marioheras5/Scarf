@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,12 +19,12 @@ public class WeaponAttack : MonoBehaviour
     void Start()
     {
         animator = weapon.GetComponent<Animator>();
-        animator.speed = 1f / attackSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        animator.speed = 1f / attackSpeed;
         if (melee)
         {
             if (Input.GetMouseButton(0) && canAttack)
@@ -46,8 +47,10 @@ public class WeaponAttack : MonoBehaviour
         // Animación de ataque
         
         animator.SetTrigger("Attack");
-        yield return new WaitForSeconds(attackSpeed);
+        float len = animator.runtimeAnimatorController.animationClips.First().length - 0.1f;
+        yield return new WaitForSeconds(len);
         collider.enabled = false;
+        yield return new WaitForSeconds(attackSpeed - len);
         canAttack = true;
     }
     void AtacarRanged()

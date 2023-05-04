@@ -8,6 +8,7 @@ public class WeaponHolder : MonoBehaviour
 
     public string currentWeapon = "";
     public List<GameObject> weapons;
+    GameObject weapon;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,22 @@ public class WeaponHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        Vector3 mousePos = Input.mousePosition;
+        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            Vector2 direction = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
+            float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = rotation;
+        }
+        else
+        {
+            Vector2 direction = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            transform.rotation = rotation;
+        }
     }
     void DesactivarArmas()
     {
@@ -30,17 +46,17 @@ public class WeaponHolder : MonoBehaviour
     {
         if (currentWeapon != "")
         {
-            GameObject weapon = weapons.First(x => x.name == currentWeapon);
-            weapon.SetActive(false);
-            SpriteRenderer renderer = weapon.GetComponent<SpriteRenderer>();
+            GameObject oldWeapon = weapons.First(x => x.name == currentWeapon);
+            oldWeapon.SetActive(false);
+            SpriteRenderer renderer = oldWeapon.GetComponent<SpriteRenderer>();
             Color color = renderer.color;
             color.a = 0f;
             renderer.color = color;
         }
         currentWeapon = weaponName;
-        GameObject weaponNew = weapons.First(x => x.name == currentWeapon);
-        weaponNew.SetActive(true);
-        SpriteRenderer rendererNew = weaponNew.GetComponent<SpriteRenderer>();
+        weapon = weapons.First(x => x.name == currentWeapon);
+        weapon.SetActive(true);
+        SpriteRenderer rendererNew = weapon.GetComponent<SpriteRenderer>();
         Color colorNew = rendererNew.color;
         colorNew.a = 255f;
         rendererNew.color = colorNew;
