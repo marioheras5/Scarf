@@ -7,7 +7,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Movimiento
+    public Animator animator;
+    public TrailRenderer tr;
+    public Rigidbody2D rb;
+
+    // Movimiento direccional
     public float moveSpeed = 5f;
     Vector2 movement;
 
@@ -17,11 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float dashForce = 25f;
     bool canDash = true;
     bool isDashing = false;
-    public Animator animator;
-    public TrailRenderer tr;
-    public Rigidbody2D rb;
 
-    // Update is called once per frame
     void Update()
     {
         if (rb == null || animator == null) return;
@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (isDashing) return;
+
         // Movimiento
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -63,10 +64,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (rb == null || animator == null || isDashing) return;
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        
     }
 }

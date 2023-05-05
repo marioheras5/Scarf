@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class WeaponHolder : MonoBehaviour
 {
-
     public string currentWeapon = "";
     public List<GameObject> weapons;
+
     GameObject weapon;
-    // Start is called before the first frame update
+
     void Start()
     {
         DesactivarArmas();
         EquipWeapon("Baston");
     }
-    // Update is called once per frame
+
     void Update()
     {
         // Posición del arma respecto al ratón
@@ -23,6 +23,7 @@ public class WeaponHolder : MonoBehaviour
         var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
         if (mousePos.x < playerScreenPoint.x)
         {
+            // Izquierda
             Vector2 direction = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
             float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -30,6 +31,7 @@ public class WeaponHolder : MonoBehaviour
         }
         else
         {
+            // Derecha
             Vector2 direction = Camera.main.ScreenToWorldPoint(mousePos) - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -58,6 +60,7 @@ public class WeaponHolder : MonoBehaviour
     }
     public void EquipWeapon(string weaponName)
     {
+        // Si ya tenía un arma, se la quitamos
         if (currentWeapon != "")
         {
             GameObject oldWeapon = weapons.First(x => x.name == currentWeapon);
@@ -67,6 +70,8 @@ public class WeaponHolder : MonoBehaviour
             color.a = 0f;
             renderer.color = color;
         }
+
+        // Equipamos el nuevo arma
         currentWeapon = weaponName;
         weapon = weapons.First(x => x.name == currentWeapon);
         weapon.SetActive(true);

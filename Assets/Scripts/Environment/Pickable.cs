@@ -6,41 +6,25 @@ using UnityEngine;
 
 public class Pickable : MonoBehaviour
 {
-    bool canPick = false;
     public GameObject pickableGameObject;
+
+    bool canPick = false;
     Collider2D playerCollider;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
+        // Render sprite actual
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.sprite = pickableGameObject.GetComponent<SpriteRenderer>().sprite;
+
+        // Pickear objeto
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
             Pick();
-        }
-    }
-    void Pick()
-    {
-        // Detectamos el weaponholder del jugador
-        WeaponHolder wh = playerCollider.gameObject.GetComponentInChildren<WeaponHolder>();
-        
-        // Si ya tiene un arma, la intercambiamos
-        if (wh.currentWeapon != "")
-        {
-            GameObject aux = wh.weapons.First(x => x.name == wh.currentWeapon);
-            wh.EquipWeapon(pickableGameObject.name);
-            pickableGameObject = aux;
-        }
-        else
-        {
-            wh.EquipWeapon(pickableGameObject.name);
-            Destroy(gameObject);
         }
     }
     void OnTriggerEnter2D(Collider2D collider)
@@ -58,6 +42,24 @@ public class Pickable : MonoBehaviour
         {
             //DesaparecerTecla();
             canPick = false;
+        }
+    }
+    private void Pick()
+    {
+        // Detectamos el weaponholder del jugador
+        WeaponHolder wh = playerCollider.gameObject.GetComponentInChildren<WeaponHolder>();
+        
+        // Si ya tiene un arma, la intercambiamos
+        if (wh.currentWeapon != "")
+        {
+            GameObject aux = wh.weapons.First(x => x.name == wh.currentWeapon);
+            wh.EquipWeapon(pickableGameObject.name);
+            pickableGameObject = aux;
+        }
+        else
+        {
+            wh.EquipWeapon(pickableGameObject.name);
+            Destroy(gameObject);
         }
     }
 }

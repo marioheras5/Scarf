@@ -8,24 +8,23 @@ public class WeaponAttack : MonoBehaviour
 {
     public GameObject weapon;
     public GameObject projectile;
-    public bool melee;
+    public bool isMelee;
     public float attackSpeed;
     public float attackDamage;
+
     bool canAttack = true;
     float timer;
     Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = weapon.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         animator.speed = 1f / attackSpeed;
-        if (melee)
+        if (isMelee)
         {
             if (Input.GetMouseButton(0) && canAttack)
             {
@@ -54,8 +53,10 @@ public class WeaponAttack : MonoBehaviour
     }
     void AtacarRanged()
     {
+        // Cargamos el ataque durante attackSpeed segundos
         if (Input.GetMouseButtonUp(0))
         {
+            // Si ya esta cargado
             if (timer > attackSpeed)
             {
                 animator.SetBool("Attack", false);
@@ -66,6 +67,7 @@ public class WeaponAttack : MonoBehaviour
         }
         else if (Input.GetMouseButton(0))
         {
+            // Cargando
             animator.SetBool("Attack", true);
             timer += Time.deltaTime;
             if (timer > attackSpeed)
@@ -76,6 +78,7 @@ public class WeaponAttack : MonoBehaviour
         }
         else
         {
+            // No hay boton pulsado
             animator.SetBool("Attack", false);
             timer = 0;
         }
