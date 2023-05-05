@@ -126,8 +126,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDamage: 20
+  force: 15
   projectile: {fileID: 5860888533431195109}
   rb: {fileID: 1057630509763530806}
+  lifespan: 5
+  pos: 0.9
 --- !u!50 &1057630509763530806
 Rigidbody2D:
   serializedVersion: 4

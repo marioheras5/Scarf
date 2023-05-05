@@ -45,7 +45,6 @@ public class WeaponAttack : MonoBehaviour
         collider.enabled = true;
 
         // Animación de ataque
-        
         animator.SetTrigger("Attack");
         float len = animator.runtimeAnimatorController.animationClips.First().length - 0.1f;
         yield return new WaitForSeconds(len);

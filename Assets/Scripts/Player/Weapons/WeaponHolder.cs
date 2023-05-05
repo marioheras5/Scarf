@@ -13,11 +13,12 @@ public class WeaponHolder : MonoBehaviour
     void Start()
     {
         DesactivarArmas();
-        EquipWeapon("Espada");
+        EquipWeapon("Baston");
     }
     // Update is called once per frame
     void Update()
     {
+        // Posición del arma respecto al ratón
         Vector3 mousePos = Input.mousePosition;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
         if (mousePos.x < playerScreenPoint.x)
@@ -34,9 +35,22 @@ public class WeaponHolder : MonoBehaviour
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = rotation;
         }
+
+        // Dropear arma con la Q
+        if (currentWeapon != "" && Input.GetKeyDown(KeyCode.Q))
+        {
+            TirarArmaActual();
+            DesactivarArmas();
+        }
+
+    }
+    void TirarArmaActual()
+    {
+
     }
     void DesactivarArmas()
     {
+        currentWeapon = "";
         foreach (var weapon in weapons)
         {
             weapon.SetActive(false);
