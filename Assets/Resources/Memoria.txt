@@ -34,3 +34,22 @@ hacemos la animacion de la espada y el tiempo de ataque
 ahora hacemos que el pj sea izq o der en funcion del raton
 el baston tmbien tira bolita y carga el ataque
 no esta terminado del todo
+
+Dia 5 (Optimizamos combate)
+El proyectil funciona bien, solo falta la colision con enemigos
+el arma se mueve en funcion de donde mira el raton
+ahora puedes pickear un objeto del suelo, entras en su collider y te sale una tecla
+para obtenerlo
+se puede intercambiar con el objeto activo del usuario
+
+error: si cambias de arma en medio de un ataque se bugea
+
+Dia 6 (5 de mayo)
+
+
+PLANIFICACION SEMANAL
+Semana 1 (1-7 mayo): Movimiento, combate, enemigos
+Semana 2 (8-14 mayo): Escenario, generacion procedural, niveles
+Semana 3 (15-21 mayo): Multijugador online
+Semana 4 (22-28 mayo): Documentacion y preparar entrega
+ENTREGA 29 de mayo
