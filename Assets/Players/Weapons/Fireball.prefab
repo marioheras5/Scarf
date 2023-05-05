@@ -125,12 +125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373147c29daf2be4b83f843ed822a822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
-  force: 15
   projectile: {fileID: 5860888533431195109}
   rb: {fileID: 1057630509763530806}
+  attackDamage: 20
+  projectileForce: 20
   lifespan: 5
-  pos: 0.9
+  startingPosition: 0.9
 --- !u!50 &1057630509763530806
 Rigidbody2D:
   serializedVersion: 4

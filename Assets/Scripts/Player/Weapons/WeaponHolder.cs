@@ -7,13 +7,13 @@ public class WeaponHolder : MonoBehaviour
 {
     public string currentWeapon = "";
     public List<GameObject> weapons;
+    public Pickable pickable;
 
     GameObject weapon;
 
     void Start()
     {
         DesactivarArmas();
-        EquipWeapon("Baston");
     }
 
     void Update()
@@ -44,11 +44,12 @@ public class WeaponHolder : MonoBehaviour
             TirarArmaActual();
             DesactivarArmas();
         }
-
+        
     }
     void TirarArmaActual()
     {
-
+        pickable.pickableGameObject = weapon;
+        Instantiate(pickable, transform.position, Quaternion.identity);
     }
     void DesactivarArmas()
     {
