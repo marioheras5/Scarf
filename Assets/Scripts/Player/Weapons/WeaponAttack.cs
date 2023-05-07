@@ -12,7 +12,7 @@ public class WeaponAttack : MonoBehaviour
     public float attackSpeed;
     public float attackDamage;
 
-    bool canAttack = true;
+    public bool canAttack = true;
     float timer;
     Animator animator;
 
@@ -51,12 +51,20 @@ public class WeaponAttack : MonoBehaviour
         yield return new WaitForSeconds(attackSpeed - len);
         canAttack = true;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+        }
+    }
     void AtacarRanged()
     {
         // Cargamos el ataque durante attackSpeed segundos
         if (Input.GetMouseButtonUp(0))
         {
             // Si ya esta cargado
+            canAttack = true;
             if (timer > attackSpeed)
             {
                 animator.SetBool("Attack", false);
@@ -68,6 +76,7 @@ public class WeaponAttack : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             // Cargando
+            canAttack = false;
             animator.SetBool("Attack", true);
             timer += Time.deltaTime;
             if (timer > attackSpeed)
@@ -79,6 +88,7 @@ public class WeaponAttack : MonoBehaviour
         else
         {
             // No hay boton pulsado
+            canAttack = true;
             animator.SetBool("Attack", false);
             timer = 0;
         }

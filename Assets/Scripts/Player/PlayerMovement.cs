@@ -26,18 +26,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb == null || animator == null) return;
 
-        // Cursor dirección
-        Vector3 mousePos = Input.mousePosition;
-        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        if (mousePos.x < playerScreenPoint.x)
-        {
-            transform.localScale = new Vector3(-1, transform.localScale.y, transform.localScale.z);
-        } 
-        else
-        {
-            transform.localScale = new Vector3(1, transform.localScale.y, transform.localScale.z);
-        }
-
         if (isDashing) return;
 
         // Movimiento
@@ -67,6 +55,21 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (rb == null || animator == null || isDashing) return;
+
+        // Cursor dirección
+        Vector3 mousePos = Input.mousePosition;
+        var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+
+        // Movimiento
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
     }
 }

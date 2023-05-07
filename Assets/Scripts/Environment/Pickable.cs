@@ -13,14 +13,12 @@ public class Pickable : MonoBehaviour
 
     void Start()
     {
-        
-    }
-    void Update()
-    {
         // Render sprite actual
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.sprite = pickableGameObject.GetComponent<SpriteRenderer>().sprite;
-
+    }
+    void Update()
+    {
         // Pickear objeto
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
@@ -53,8 +51,14 @@ public class Pickable : MonoBehaviour
         if (wh.currentWeapon != "")
         {
             GameObject aux = wh.weapons.First(x => x.name == wh.currentWeapon);
-            wh.EquipWeapon(pickableGameObject.name);
-            pickableGameObject = aux;
+            if (aux.GetComponent<WeaponAttack>().canAttack)
+            {
+                wh.EquipWeapon(pickableGameObject.name);
+                pickableGameObject = aux;
+                // Render sprite actual
+                SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+                renderer.sprite = pickableGameObject.GetComponent<SpriteRenderer>().sprite;
+            }
         }
         else
         {

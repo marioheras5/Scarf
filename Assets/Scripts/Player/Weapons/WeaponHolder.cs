@@ -16,7 +16,7 @@ public class WeaponHolder : MonoBehaviour
         DesactivarArmas();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Posición del arma respecto al ratón
         Vector3 mousePos = Input.mousePosition;
@@ -39,17 +39,23 @@ public class WeaponHolder : MonoBehaviour
         }
 
         // Dropear arma con la Q
-        if (currentWeapon != "" && Input.GetKeyDown(KeyCode.Q))
+        if (currentWeapon != "" && !IsAttacking() && Input.GetKeyDown(KeyCode.Q))
         {
             TirarArmaActual();
             DesactivarArmas();
         }
         
     }
+    bool IsAttacking()
+    {
+        return !weapon.GetComponent<WeaponAttack>().canAttack;
+    }
     void TirarArmaActual()
     {
         pickable.pickableGameObject = weapon;
-        Instantiate(pickable, transform.position, Quaternion.identity);
+        Vector3 pos = transform.position;
+        pos.z = transform.position.z + 1;
+        Instantiate(pickable, pos, Quaternion.Euler(0, 0, 270));
     }
     void DesactivarArmas()
     {

@@ -36,6 +36,7 @@ public class Projectile : MonoBehaviour
         // Si choca contra un enemigo o una pared se rompe
         if (collision.gameObject.tag == "Enemy")
         {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage);
             Destroy(projectile);
         }
     }

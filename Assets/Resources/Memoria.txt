@@ -45,6 +45,11 @@ se puede intercambiar con el objeto activo del usuario
 error: si cambias de arma en medio de un ataque se bugea
 
 Dia 6 (5 de mayo)
+Arreglamos bug de cambio de arma, añadimos hud provisional y camara
+
+Dia 7 (The enemy update???)
+Empezamos poniendo los sprites de teclas al coger arma
+
 
 
 PLANIFICACION SEMANAL
