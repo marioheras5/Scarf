@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     public float projectileForce;
     public float lifespan;
     public float startingPosition;
+    public float knockback;
 
     void Start()
     {
@@ -36,7 +37,8 @@ public class Projectile : MonoBehaviour
         // Si choca contra un enemigo o una pared se rompe
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+            Vector3 knockbackDirection = (collision.transform.position - transform.position).normalized * knockback;
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, knockbackDirection);
             Destroy(projectile);
         }
     }

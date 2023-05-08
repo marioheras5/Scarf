@@ -45,7 +45,7 @@ public class Pickable : MonoBehaviour
     private void Pick()
     {
         // Detectamos el weaponholder del jugador
-        WeaponHolder wh = playerCollider.gameObject.GetComponentInChildren<WeaponHolder>();
+        WeaponHolder wh = playerCollider.gameObject.transform.parent.gameObject.GetComponentInChildren<WeaponHolder>();
         
         // Si ya tiene un arma, la intercambiamos
         if (wh.currentWeapon != "")

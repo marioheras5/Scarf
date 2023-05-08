@@ -10,6 +10,8 @@ public class TextManager : MonoBehaviour
     void Start()
     {
         text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        Vector3 pos = text.rectTransform.anchoredPosition;
+        text.rectTransform.anchoredPosition = new Vector3(pos.x, pos.y + 10f, pos.z);
     }
 
     void FixedUpdate()

@@ -7,6 +7,7 @@ public class WalkingEnemy : MonoBehaviour
     GameObject followingPlayer;
     public float speed;
     public float damage;
+    public bool knockbacking;
 
     public Animator animator;
     public Rigidbody2D rb;
@@ -34,15 +35,26 @@ public class WalkingEnemy : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
+
+        if (knockbacking)
+        {
+            StartCoroutine(Knockbacking());
+            return;
+        }
         // Move the enemy towards the player
         rb.velocity = direction * speed;
+    }
+    IEnumerator Knockbacking()
+    {
+        yield return new WaitForSeconds(0.15f);
+        knockbacking = false;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.transform.tag == "Player")
         {
             PlayerStats playerStats = collision.gameObject.GetComponent<PlayerStats>();
-            playerStats.TakeDamage(damage);
+            playerStats.TakeDamage(damage, Vector3.zero);
         }
     }
     void TargetearPlayer()

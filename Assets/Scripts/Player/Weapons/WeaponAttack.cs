@@ -11,10 +11,12 @@ public class WeaponAttack : MonoBehaviour
     public bool isMelee;
     public float attackSpeed;
     public float attackDamage;
+    public float knockback;
 
     public bool canAttack = true;
     float timer;
     Animator animator;
+    List<Collider2D> cantAttackList = new List<Collider2D>();
 
     void Start()
     {
@@ -49,13 +51,16 @@ public class WeaponAttack : MonoBehaviour
         yield return new WaitForSeconds(len);
         collider.enabled = false;
         yield return new WaitForSeconds(attackSpeed - len);
+        cantAttackList.Clear();
         canAttack = true;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Enemy" && !cantAttackList.Contains(collision))
         {
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+            Vector3 knockbackDirection = (collision.transform.position - transform.position).normalized * knockback;
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, knockbackDirection);
+            cantAttackList.Add(collision);
         }
     }
     void AtacarRanged()

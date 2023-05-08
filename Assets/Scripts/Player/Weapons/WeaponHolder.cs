@@ -8,6 +8,7 @@ public class WeaponHolder : MonoBehaviour
     public string currentWeapon = "";
     public List<GameObject> weapons;
     public Pickable pickable;
+    public GameObject player;
 
     GameObject weapon;
 
@@ -18,6 +19,9 @@ public class WeaponHolder : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Seguir player
+        transform.position = player.transform.position;
+
         // Posición del arma respecto al ratón
         Vector3 mousePos = Input.mousePosition;
         var playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
@@ -28,6 +32,7 @@ public class WeaponHolder : MonoBehaviour
             float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = rotation;
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
         else
         {
@@ -36,10 +41,11 @@ public class WeaponHolder : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = rotation;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
         }
 
         // Dropear arma con la Q
-        if (currentWeapon != "" && !IsAttacking() && Input.GetKeyDown(KeyCode.Q))
+        if (currentWeapon != "" && !IsAttacking() && Input.GetKey(KeyCode.Q))
         {
             TirarArmaActual();
             DesactivarArmas();

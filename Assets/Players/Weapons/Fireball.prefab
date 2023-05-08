@@ -131,6 +131,7 @@ MonoBehaviour:
   projectileForce: 20
   lifespan: 5
   startingPosition: 0.9
+  knockback: 8
 --- !u!50 &1057630509763530806
 Rigidbody2D:
   serializedVersion: 4
