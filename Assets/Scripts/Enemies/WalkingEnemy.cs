@@ -7,7 +7,6 @@ public class WalkingEnemy : MonoBehaviour
     GameObject followingPlayer;
     public float speed;
     public float damage;
-    public float health;
 
     public Animator animator;
     public Rigidbody2D rb;

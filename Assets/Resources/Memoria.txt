@@ -49,12 +49,59 @@ Arreglamos bug de cambio de arma, añadimos hud provisional y camara
 
 Dia 7 (The enemy update???)
 Empezamos poniendo los sprites de teclas al coger arma
+Creamos un enemigo basico, nos sigue y hace daño
 
+8/05
+Perfeccionamos el hacerse daño, ponemos un texto indicando el daño causado
+Estoy empezando a hacer que baje la vida al hacernos daño
+
+9/05
+
+10/05
+
+11/05
+
+12/05
+
+13/05
+
+14/05
+
+15/05
+
+16/05
+
+17/05
+
+18/05
+
+19/05
+
+20/05
+
+21/05
+
+22/05
+
+23/05
+
+24/05
+
+25/05
+
+26/05
+
+27/05
+
+28/05
+
+29/05
 
 
 PLANIFICACION SEMANAL
-Semana 1 (1-7 mayo): Movimiento, combate, enemigos
-Semana 2 (8-14 mayo): Escenario, generacion procedural, niveles
+Semana 1 (1-7 mayo): Movimiento, combate, enemigos DONE
+Semana 2 (8-14 mayo): Combate, escenario, generacion procedural, niveles
 Semana 3 (15-21 mayo): Multijugador online
-Semana 4 (22-28 mayo): Documentacion y preparar entrega
+Semana 4 (22-28 mayo): Retoques finales, documentacion y preparar entrega
 ENTREGA 29 de mayo
+PRESENTACION 1 a 15 de junio
