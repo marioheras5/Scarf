@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
 {
     public GameObject player;
     public float health;
-    public TextMeshPro text; 
+    GameObject text;
 
     public float invincibilityTime = 1f;
     bool invincible;
@@ -16,7 +16,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        text = Resources.Load<GameObject>("CombatTextGO");
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
         if (invincible) return;
         bool isPlayer = player.tag == "Player";
         health -= damage;
-        MostrarNumero(damage);
+        if (!isPlayer) MostrarNumero(damage);
         if (health <= 0)
         {
             if (isPlayer)
@@ -69,8 +69,8 @@ public class PlayerStats : MonoBehaviour
     }
     void MostrarNumero(float damage)
     {
-        text.SetText(damage.ToString());
-        Instantiate(text, Vector3.zero, Quaternion.identity);
+        text.GetComponentInChildren<TextMeshProUGUI>().SetText("-" + damage.ToString());
+        Instantiate(text, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, GameObject.Find("HUD").transform);
     }
     void Muerte()
     {
