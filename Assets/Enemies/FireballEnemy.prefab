@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 607355256593008610}
   attackDamage: 30
-  projectileForce: 20
+  projectileForce: 10
   lifespan: 2
   startingPosition: 0
   knockback: 0

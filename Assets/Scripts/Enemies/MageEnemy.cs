@@ -6,12 +6,12 @@ public class MageEnemy : MonoBehaviour
 {
     public GameObject projectile;
     public float attackSpeed;
-    bool canAttack = true;
+    bool canAttack;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        StartCoroutine(StartAttacking());
     }
 
     // Update is called once per frame
@@ -21,6 +21,11 @@ public class MageEnemy : MonoBehaviour
         {
             StartCoroutine(Attack());
         }
+    }
+    IEnumerator StartAttacking()
+    {
+        yield return new WaitForSeconds(attackSpeed);
+        canAttack = true;
     }
     IEnumerator Attack()
     {
