@@ -30,7 +30,7 @@ public class Pickable : MonoBehaviour
         if (collider.transform.tag == "Player")
         {
             playerCollider = collider;
-            //AparecerTecla();
+            AparecerTecla(true);
             canPick = true;
         }
     }
@@ -38,9 +38,16 @@ public class Pickable : MonoBehaviour
     {
         if (collider.transform.tag == "Player")
         {
-            //DesaparecerTecla();
+            AparecerTecla(false);
             canPick = false;
         }
+    }
+    void AparecerTecla(bool alpha)
+    {
+        SpriteRenderer sr = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        Color color = sr.color;
+        color.a = alpha ? 1 : 0;
+        sr.color = color;
     }
     private void Pick()
     {
