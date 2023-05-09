@@ -54,8 +54,11 @@ Creamos un enemigo basico, nos sigue y hace daño
 8/05
 Perfeccionamos el hacerse daño, ponemos un texto indicando el daño causado
 Estoy empezando a hacer que baje la vida al hacernos daño
+Hecho!
 
 9/05
+He añadido un icono de tecla cuando pasas por encima de un arma del suelo.
+Estoy investigando sobre la creación de escenarios.
 
 10/05
 

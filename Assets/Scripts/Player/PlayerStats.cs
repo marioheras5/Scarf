@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public GameObject player;
     public float health;
     public GameObject healthBar;
 
@@ -34,7 +33,7 @@ public class PlayerStats : MonoBehaviour
             frameCounter++;
             if (frameCounter == 2)
             {
-                SpriteRenderer render = player.GetComponent<SpriteRenderer>();
+                SpriteRenderer render = GetComponent<SpriteRenderer>();
                 Color color = render.color;
                 color.a = 0;
                 render.color = color;
@@ -42,7 +41,7 @@ public class PlayerStats : MonoBehaviour
             else if (frameCounter == 4)
             {
                 frameCounter = 0;
-                SpriteRenderer render = player.GetComponent<SpriteRenderer>();
+                SpriteRenderer render = GetComponent<SpriteRenderer>();
                 Color color = render.color;
                 color.a = 255;
                 render.color = color;
@@ -50,7 +49,7 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            SpriteRenderer render = player.GetComponent<SpriteRenderer>();
+            SpriteRenderer render = GetComponent<SpriteRenderer>();
             Color color = render.color;
             color.a = 255;
             render.color = color;
@@ -60,13 +59,13 @@ public class PlayerStats : MonoBehaviour
     {
         if (invincible) return;
 
-        bool isPlayer = player.tag == "Player";
+        bool isPlayer = tag == "Player";
         health -= damage;
 
         if (knockbackDirection != Vector3.zero)
         {
-            player.GetComponent<Rigidbody2D>().velocity = knockbackDirection;
-            player.GetComponent<WalkingEnemy>().knockbacking = true;
+            GetComponent<Rigidbody2D>().velocity = knockbackDirection;
+            GetComponent<WalkingEnemy>().knockbacking = true;
         }
         if (!isPlayer) MostrarNumero(damage);
         else
@@ -82,7 +81,7 @@ public class PlayerStats : MonoBehaviour
                 Muerte();
                 return;
             }
-            Destroy(player);
+            Destroy(gameObject);
         }
 
         StartCoroutine(Invincible());

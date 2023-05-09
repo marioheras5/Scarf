@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public Rigidbody2D rb;
 
@@ -17,7 +16,9 @@ public class Projectile : MonoBehaviour
     {
         // Dirección del proyectil - Jugador -> Mouse
         transform.position = new Vector3(transform.position.x, transform.position.y + startingPosition, transform.position.z);
-        Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        
+        Vector3 target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        Vector2 direction = (target - transform.position).normalized;
         rb.AddForce(direction * projectileForce, ForceMode2D.Impulse);
         float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -34,11 +35,10 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Si choca contra un enemigo o una pared se rompe
-        if (collision.gameObject.tag == "Enemy")
+        // Si choca contra un player
+        if (collision.gameObject.tag == "Player")
         {
-            Vector3 knockbackDirection = (collision.transform.position - transform.position).normalized * knockback;
-            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, knockbackDirection);
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, Vector3.zero);
             Destroy(gameObject);
         }
     }

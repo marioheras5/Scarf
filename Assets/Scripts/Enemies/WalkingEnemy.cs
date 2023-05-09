@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WalkingEnemy : MonoBehaviour
 {
-    GameObject followingPlayer;
+    public GameObject followingPlayer;
     public float speed;
     public float damage;
     public bool knockbacking;
@@ -15,7 +15,7 @@ public class WalkingEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TargetearPlayer();
+        followingPlayer = TargetearPlayer();
         animator.SetBool("Speed", true);
     }
 
@@ -57,9 +57,9 @@ public class WalkingEnemy : MonoBehaviour
             playerStats.TakeDamage(damage, Vector3.zero);
         }
     }
-    void TargetearPlayer()
+    public GameObject TargetearPlayer()
     {
-        followingPlayer = GameObject.FindGameObjectWithTag("Player");
+        return GameObject.FindGameObjectWithTag("Player");
     }
 
 }
