@@ -59,8 +59,24 @@ Hecho!
 9/05
 He añadido un icono de tecla cuando pasas por encima de un arma del suelo.
 Estoy investigando sobre la creación de escenarios.
+Escenario provisional.
+Menu mejorado
 
 10/05
+REVISION DE REQUISITOS
+Mejoras:
+	Tutorial
+	Mejorar un poco más el menú
+	Pantalla intermedia de selección de personajes (Escena)
+	Oleadas de enemigos, contador de enemigos muertos y de oleadas
+	Dash invulnerabilidad, mejorar textura de dash, mas rango con espada y que devuelva las balas
+	Más armas
+	Menú de pausa
+	Modo cooperativo 2 jugadores maximo por ahora.
+	Generación procedural de un terreno como nuclear throne.
+	2 niveles, 10 oleadas, 1 jefe
+	Hacer más enemigos
+	Click derecho habilidad especial
 
 11/05
 
