@@ -80,6 +80,10 @@ Mejoras:
 
 11/05
 
+Objetivos:
+	Terminar selección de personajes
+	Menú de pausa
+	
 12/05
 
 13/05
