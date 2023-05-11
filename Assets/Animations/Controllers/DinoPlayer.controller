@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DocIdle
+  m_Name: DinoIdle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2c2735912e4b2ee4cacca40ceb06a255, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7e2000658f14fab4d82a1dfde814a490, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: doc_0
+  m_Name: DinoPlayer
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -143,7 +143,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DocWalk
+  m_Name: DinoWalk
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -157,7 +157,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 0db3c09ac12321b4091356b0e43c8c72, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0430e19a2b3d3954c81bdbcd6c8656ad, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

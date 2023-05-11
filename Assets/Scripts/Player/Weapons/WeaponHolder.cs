@@ -15,6 +15,10 @@ public class WeaponHolder : MonoBehaviour
     void Start()
     {
         DesactivarArmas();
+        if (currentWeapon != "")
+        {
+            EquipWeapon(currentWeapon);
+        }
     }
 
     void FixedUpdate()

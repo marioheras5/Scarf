@@ -86,6 +86,11 @@ Objetivos:
 	
 12/05
 
+Objetivos:
+	Poder pegarle al dummy y poner armas (WeaponHolder tira error)
+	Transicion seleccion de pj a juego
+	Poner botnes ENTER y ESCAPE y señalizar salida en seleccion
+
 13/05
 
 14/05
