@@ -10,6 +10,8 @@ public class WeaponHolder : MonoBehaviour
     public Pickable pickable;
     public GameObject player;
 
+    GameObject realPlayer;
+
     GameObject weapon;
 
     void Start()
@@ -24,7 +26,19 @@ public class WeaponHolder : MonoBehaviour
     void FixedUpdate()
     {
         // Seguir player
-        transform.position = player.transform.position;
+        if (player.GetComponentInChildren<PlayerMovement>() != null)
+        {
+            realPlayer = player.GetComponentInChildren<PlayerMovement>().gameObject;
+        }
+
+        if (realPlayer != null)
+        {
+            transform.position = realPlayer.transform.position;
+        }
+        else
+        {
+            transform.position = player.transform.position;
+        }
 
         // Posición del arma respecto al ratón
         Vector3 mousePos = Input.mousePosition;
@@ -60,14 +74,14 @@ public class WeaponHolder : MonoBehaviour
     {
         return !weapon.GetComponent<WeaponAttack>().canAttack;
     }
-    void TirarArmaActual()
+    public void TirarArmaActual()
     {
         pickable.pickableGameObject = weapon;
         Vector3 pos = transform.position;
         pos.z = transform.position.z + 1;
         Instantiate(pickable, pos, Quaternion.Euler(0, 0, 270));
     }
-    void DesactivarArmas()
+    public void DesactivarArmas()
     {
         currentWeapon = "";
         foreach (var weapon in weapons)

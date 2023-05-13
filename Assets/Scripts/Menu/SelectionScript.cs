@@ -27,6 +27,11 @@ public class SelectionScript : MonoBehaviour
                 characters[index].SetActive(true);
                 background.SetActive(true);
                 selected = false;
+                if (currentCharacter.transform.parent.GetComponentInChildren<WeaponHolder>().currentWeapon != "")
+                {
+                    currentCharacter.transform.parent.GetComponentInChildren<WeaponHolder>().DesactivarArmas();
+                    currentCharacter.transform.parent.GetComponentInChildren<WeaponHolder>().TirarArmaActual();
+                }
                 Destroy(currentCharacter);
             }
             else
