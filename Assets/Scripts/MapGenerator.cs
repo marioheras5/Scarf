@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static UnityEditor.PlayerSettings;
@@ -83,11 +84,25 @@ public class MapGenerator : MonoBehaviour
         {
             for (int j = 0; j < map.GetLength(1); j++)
             {
-                if (map[i,j] == 0)
+                if (map[i, j] == 0)
                 {
+                    // Ground
+                    groundTilemap.SetTile(new Vector3Int(i - maxX, j - maxY, 2), groundTile);
                     // Wall
                     wallTilemap.SetTile(new Vector3Int(i - maxX, j - maxY, 1), wallTile);
                 }
+            }
+        }
+        // Offsets
+        for (int i = - maxX - 20; i < maxX + 20; i++)
+        {
+            for (int j = - maxY - 20; j < maxY + 20; j++)
+            {
+                if (i >= -maxX && j >= -maxY && i < map.GetLength(0) - maxX && j < map.GetLength(1) - maxY)
+                {
+                    continue;
+                }
+                wallTilemap.SetTile(new Vector3Int(i, j, 1), wallTile);
             }
         }
     }

@@ -15,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Walls
   - 
   - 
   - 
@@ -44,4 +44,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Suelo
+    uniqueID: 3580469905
+    locked: 0
+  - name: Players
+    uniqueID: 2573997391
+    locked: 0
+  - name: Paredes
+    uniqueID: 2733057311
     locked: 0

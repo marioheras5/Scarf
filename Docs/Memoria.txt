@@ -93,7 +93,12 @@ Objetivos:
 
 13/05
 
+Generación procedural terminada! por lo menos el mapa.
+Lo crea perfecto
+
 14/05
+
+Iluminacion
 
 15/05
 
