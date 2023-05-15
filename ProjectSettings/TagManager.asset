@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - start
-  - exit
-  - espada
   - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -53,4 +51,7 @@ TagManager:
     locked: 0
   - name: Paredes
     uniqueID: 2733057311
+    locked: 0
+  - name: Pickables
+    uniqueID: 3595997547
     locked: 0

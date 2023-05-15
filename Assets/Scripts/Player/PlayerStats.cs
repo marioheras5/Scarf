@@ -55,6 +55,13 @@ public class PlayerStats : MonoBehaviour
             render.color = color;
         }
     }
+
+    public void Heal(float amount)
+    {
+        health += amount;
+        if (health > maxHealth) health = maxHealth;
+        UpdateHealthBar();
+    }
     public void TakeDamage(float damage, [Optional] Vector3 knockbackDirection)
     {
         if (invincible) return;

@@ -10,11 +10,19 @@ public class MapGenerator : MonoBehaviour
     // Grounds
     public Tilemap groundTilemap;
     public TileBase groundTile;
+    public TileBase groundTile2;
+    public TileBase groundTile3;
+    public TileBase groundTile4;
+
+    public Tilemap addonsTilemap;
+    public TileBase addonsTile1;
+    public TileBase addonsTile2;
+
+    public GameObject chest;
 
     // Walls
     public Tilemap wallTilemap;
     public TileBase wallTile;
-
 
     public int maxX;
     public int maxY;
@@ -32,6 +40,11 @@ public class MapGenerator : MonoBehaviour
     {
         GenerateGround();
         PaintTerrain();
+        EnableShadows();
+    }
+    void EnableShadows()
+    {
+        wallTilemap.GetComponent<ShadowCaster2DCreator>().Create();
     }
     void GenerateGround()
     {
@@ -48,7 +61,40 @@ public class MapGenerator : MonoBehaviour
             }
             cont -= 10;
             map[pos[0] + maxX, pos[1] + maxY] = 1;
-            groundTilemap.SetTile(new Vector3Int(pos[0], pos[1], 2), groundTile);
+
+            TileBase tile;
+            int num = new System.Random().Next(0, 300);
+            switch (num)
+            {
+                case 0:
+                case 1:
+                    tile = groundTile2;
+                    break;
+                case 3:
+                case 4:
+                    tile = groundTile3;
+                    break;
+                case 6:
+                case 7:
+                    tile = groundTile4;
+                    break;
+                case 8:
+                    tile = groundTile;
+                    Instantiate(chest, new Vector3Int(pos[0], pos[1], 1), Quaternion.identity);
+                    break;
+                case 9:
+                    tile = groundTile;
+                    addonsTilemap.SetTile(new Vector3Int(pos[0], pos[1], 1), addonsTile1);
+                    break;
+                case 10:
+                    tile = groundTile;
+                    addonsTilemap.SetTile(new Vector3Int(pos[0], pos[1], 1), addonsTile2);
+                    break;
+                default:
+                    tile = groundTile;
+                    break;
+            }
+            groundTilemap.SetTile(new Vector3Int(pos[0], pos[1], 2), tile);
 
             if (pos[0] + 1 < maxX && RandomDice())
             {

@@ -9,6 +9,8 @@ public class Pickable : MonoBehaviour
     public GameObject pickableGameObject;
 
     bool canPick = false;
+    public bool isWeapon;
+    public string collectibleName;
     Collider2D playerCollider;
 
     void Start()
@@ -22,7 +24,14 @@ public class Pickable : MonoBehaviour
         // Pickear objeto
         if (canPick && Input.GetKeyDown(KeyCode.E))
         {
-            Pick();
+            if (isWeapon)
+            {
+                PickWeapon();
+            }
+            else
+            {
+                PickCollectible();
+            }
         }
     }
     void OnTriggerEnter2D(Collider2D collider)
@@ -49,7 +58,22 @@ public class Pickable : MonoBehaviour
         color.a = alpha ? 1 : 0;
         sr.color = color;
     }
-    private void Pick()
+    void PickCollectible()
+    {
+        switch (collectibleName)
+        {
+            case "Cura":
+                PickCura();
+                break;
+            default:
+                break;
+        }
+    }
+    void PickCura()
+    {
+        playerCollider.GetComponent<PlayerStats>().Heal(100f);
+    }
+    private void PickWeapon()
     {
         // Detectamos el weaponholder del jugador
         WeaponHolder wh = playerCollider.gameObject.transform.parent.gameObject.GetComponentInChildren<WeaponHolder>();
