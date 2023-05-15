@@ -9,18 +9,9 @@ public class SelectionTransitionScript : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            GameObject players = GameObject.Find("Players");
-            GameObject[] p = new GameObject[players.transform.childCount];
-            for (int i = 0; i < p.Length; i++)
-            {
-                p[i] = players.transform.GetChild(i).gameObject;
-            }
-            SceneInfoManager.players = p;
+            GameObject players = GameObject.Find("SelectedPlayers");
+            DontDestroyOnLoad(players);
             SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
         }
     }
-}
-public static class SceneInfoManager
-{
-    public static GameObject[] players;
 }
