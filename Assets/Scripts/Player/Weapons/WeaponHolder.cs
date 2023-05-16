@@ -77,6 +77,7 @@ public class WeaponHolder : MonoBehaviour
     public void TirarArmaActual()
     {
         pickable.pickableGameObject = weapon;
+        pickable.isWeapon = true;
         Vector3 pos = transform.position;
         pos.z = transform.position.z + 1;
         Instantiate(pickable, pos, Quaternion.Euler(0, 0, 270));

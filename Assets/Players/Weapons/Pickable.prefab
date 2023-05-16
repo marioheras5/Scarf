@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c2cefeda9cd5f4b996996516311309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickableGameObject: {fileID: 7559877180101937879, guid: 84294de75af842940900715ea76bea33, type: 3}
-  isWeapon: 0
-  collectibleName: Cura
+  pickableGameObject: {fileID: 0}
+  isWeapon: 1
+  collectibleName: 
 --- !u!1 &978152941032316714
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,8 +188,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -698969749
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2140892463, guid: 8d5641e877e80d6449e2c61fa0b912f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}

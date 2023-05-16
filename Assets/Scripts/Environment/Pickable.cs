@@ -72,6 +72,7 @@ public class Pickable : MonoBehaviour
     void PickCura()
     {
         playerCollider.GetComponent<PlayerStats>().Heal(100f);
+        Destroy(gameObject);
     }
     private void PickWeapon()
     {

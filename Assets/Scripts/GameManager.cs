@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
             GameObject full = healthBar.transform.GetChild(1).gameObject;
 
             string charName = GetCharacterName(player);
+            player.GetComponentInChildren<PlayerStats>().healthBar = full;
             empty.GetComponent<Image>().sprite = Resources.Load<Sprite>($"marco{charName}Empty");
             full.GetComponent<Image>().sprite = Resources.Load<Sprite>($"marco{charName}");
 

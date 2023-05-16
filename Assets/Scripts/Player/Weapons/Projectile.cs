@@ -17,7 +17,8 @@ public class Projectile : MonoBehaviour
     {
         // Dirección del proyectil - Jugador -> Mouse
         transform.position = new Vector3(transform.position.x, transform.position.y + startingPosition, transform.position.z);
-        Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+        direction.Normalize();
         rb.AddForce(direction * projectileForce, ForceMode2D.Impulse);
         float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
