@@ -11,6 +11,7 @@ public class EnemyProjectile : MonoBehaviour
     public float lifespan;
     public float startingPosition;
     public float knockback;
+    public bool friendlyFire;
 
     void Start()
     {
@@ -37,6 +38,15 @@ public class EnemyProjectile : MonoBehaviour
     {
         // Si choca contra un player
         if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, Vector3.zero);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy" && friendlyFire)
         {
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, Vector3.zero);
             Destroy(gameObject);

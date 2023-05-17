@@ -62,6 +62,16 @@ public class WeaponAttack : MonoBehaviour
             collision.gameObject.GetComponent<PlayerStats>().TakeDamage(attackDamage, knockbackDirection);
             cantAttackList.Add(collision);
         }
+        if (collision.transform.tag == "Projectile")
+        {
+            GameObject go = collision.gameObject;
+            EnemyProjectile ep = go.GetComponent<EnemyProjectile>();
+            ep.friendlyFire = true;
+            ep.lifespan = ep.lifespan + 2.5f;
+            ep.rb.velocity = -ep.rb.velocity;
+            float angle = Mathf.Atan2(ep.rb.velocity.y, ep.rb.velocity.x) * Mathf.Rad2Deg;
+            ep.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
     }
     void AtacarRanged()
     {

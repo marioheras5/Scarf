@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7341040538673196704}
   - component: {fileID: 7314879942949872419}
   - component: {fileID: 7314879941715453300}
+  - component: {fileID: 3963160545556716632}
   m_Layer: 0
   m_Name: MiniMago
   m_TagString: Enemy
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1720969905
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1219937826, guid: 7c40f1d830c36104a9810e834d11fb65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -205,3 +206,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 6311434420900381233, guid: 4fc1541e8d16cf7458e6a218a64b62ba, type: 3}
   attackSpeed: 2
+--- !u!61 &3963160545556716632
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341040538673196715}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.008408926, y: -0.029851746}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.17}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.07254691, y: 0.100296505}
+  m_EdgeRadius: 0

@@ -89,6 +89,7 @@ public class PlayerStats : MonoBehaviour
                 return;
             }
             Destroy(gameObject);
+            GameObject.Find("GameManager").GetComponent<GameManager>().AddKill();
         }
 
         StartCoroutine(Invincible());

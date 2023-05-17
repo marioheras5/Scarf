@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
+    public GameObject counter;
+    int kills;
+
     void Start()
     {
         InitializePlayers();
@@ -62,9 +66,9 @@ public class GameManager : MonoBehaviour
         }
         return "Doc";
     }
-    // Update is called once per frame
-    void Update()
+    public void AddKill()
     {
-        
+        kills++;
+        counter.GetComponent<TextMeshProUGUI>().text = kills.ToString();
     }
 }
