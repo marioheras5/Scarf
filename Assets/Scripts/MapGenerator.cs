@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -48,11 +47,6 @@ public class MapGenerator : MonoBehaviour
     {
         GenerateGround();
         PaintTerrain();
-        EnableShadows();
-    }
-    void EnableShadows()
-    {
-        wallTilemap.GetComponent<ShadowCaster2DCreator>().Create();
     }
     void GenerateGround()
     {
