@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 
-public class WeaponHolder : MonoBehaviour
+public class WeaponHolder : NetworkBehaviour
 {
     public string currentWeapon = "";
     public List<GameObject> weapons;
@@ -16,6 +17,7 @@ public class WeaponHolder : MonoBehaviour
 
     void Start()
     {
+        //if (!IsOwner) return;
         DesactivarArmas();
         if (currentWeapon != "")
         {
@@ -25,6 +27,7 @@ public class WeaponHolder : MonoBehaviour
 
     void FixedUpdate()
     {
+        //if (!IsOwner) return;
         // Seguir player
         if (player.GetComponentInChildren<PlayerMovement>() != null)
         {

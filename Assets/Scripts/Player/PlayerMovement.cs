@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Threading;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
     public Animator animator;
     public TrailRenderer tr;
@@ -24,9 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (rb == null || animator == null) return;
+        if (rb == null || animator == null || isDashing /*|| !IsOwner*/) return;
 
-        if (isDashing) return;
 
         // Movimiento
         movement.x = Input.GetAxisRaw("Horizontal");

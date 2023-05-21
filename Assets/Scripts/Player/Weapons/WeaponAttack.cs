@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class WeaponAttack : MonoBehaviour
+public class WeaponAttack : NetworkBehaviour
 {
     public GameObject weapon;
     public GameObject projectile;
@@ -20,11 +22,13 @@ public class WeaponAttack : MonoBehaviour
 
     void Start()
     {
+        //if (!IsOwner) return;
         animator = weapon.GetComponent<Animator>();
     }
 
     void Update()
     {
+        //if (!IsOwner) return;
         animator.speed = 1f / attackSpeed;
         if (isMelee)
         {

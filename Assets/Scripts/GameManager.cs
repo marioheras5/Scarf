@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
+    public GameObject[] enemies;
     public GameObject counter;
+    public GameObject currentCounter;
     int kills;
+    int currentEnemies;
+    List<Vector3Int> lastPos;
 
     void Start()
     {
@@ -69,6 +73,24 @@ public class GameManager : MonoBehaviour
     public void AddKill()
     {
         kills++;
+        currentEnemies--;
         counter.GetComponent<TextMeshProUGUI>().text = kills.ToString();
+        currentCounter.GetComponent<TextMeshProUGUI>().text = currentEnemies.ToString();
+        if (currentEnemies == 0)
+        {
+            GenerarEnemigos(lastPos);
+        }
+    }
+    public void GenerarEnemigos(List<Vector3Int> pos)
+    {
+        lastPos = pos;
+        currentEnemies = pos.Count;
+        currentCounter.GetComponent<TextMeshProUGUI>().text = currentEnemies.ToString();
+        foreach (Vector3Int posInt in pos)
+        {
+            int num = new System.Random().Next(0, 3);
+
+            Instantiate(enemies[num], posInt, Quaternion.identity);
+        }
     }
 }

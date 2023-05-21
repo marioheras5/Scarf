@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -13,10 +14,11 @@ public class SelectionScript : MonoBehaviour
     bool selected;
     bool canChange = true;
     GameObject currentCharacter;
+    NetworkManager networkManager;
 
     void Start()
     {
-        
+        networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
     }
     void Update()
     {

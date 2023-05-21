@@ -4,13 +4,15 @@ using System.Runtime.InteropServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    public GameObject deadSound;
     public float health;
     public GameObject healthBar;
-
+    bool muerto = false;
     float maxHealth;
     GameObject text;
 
@@ -28,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (muerto) return;
         if (invincible)
         {
             frameCounter++;
@@ -64,6 +67,7 @@ public class PlayerStats : MonoBehaviour
     }
     public void TakeDamage(float damage, [Optional] Vector3 knockbackDirection)
     {
+        if (muerto) return;
         if (invincible) return;
 
         bool isPlayer = tag == "Player";
@@ -85,7 +89,7 @@ public class PlayerStats : MonoBehaviour
         {
             if (isPlayer)
             {
-                Muerte();
+                StartCoroutine(Muerte());
                 return;
             }
             Destroy(gameObject);
@@ -107,9 +111,15 @@ public class PlayerStats : MonoBehaviour
         text.GetComponentInChildren<TextMeshProUGUI>().SetText("-" + damage.ToString());
         Instantiate(text, Camera.main.WorldToScreenPoint(transform.position), Quaternion.identity, GameObject.Find("HUD").transform);
     }
-    void Muerte()
+    IEnumerator Muerte()
     {
-        Debug.Log("Muelto");
+        if (muerto) yield return null;
+        muerto = true;
+        Instantiate(deadSound);
+        GameObject.Find("Dead").GetComponent<Animator>().SetTrigger("Dead");
+        yield return new WaitForSeconds(9f);
+        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
+        Destroy(GameObject.Find("SelectedPlayers"));
     }
     IEnumerator Invincible()
     {

@@ -7,6 +7,10 @@ using static UnityEditor.PlayerSettings;
 
 public class MapGenerator : MonoBehaviour
 {
+    // Enemigos
+    List<Vector3Int> enemies;
+
+
     // Grounds
     public Tilemap groundTilemap;
     public TileBase groundTile;
@@ -30,10 +34,14 @@ public class MapGenerator : MonoBehaviour
     int cont = 1500;
     int[,] map;
 
+    
+
     private void Start()
     {
+        enemies = new();
         map = new int[maxX * 2, maxY * 2];
         GenerateLevel();
+        GetComponent<GameManager>().GenerarEnemigos(enemies);
     }
 
     void GenerateLevel()
@@ -89,6 +97,10 @@ public class MapGenerator : MonoBehaviour
                 case 10:
                     tile = groundTile;
                     addonsTilemap.SetTile(new Vector3Int(pos[0], pos[1], 1), addonsTile2);
+                    break;
+                case 11:
+                    tile = groundTile;
+                    enemies.Add(new Vector3Int(pos[0], pos[1], 1));
                     break;
                 default:
                     tile = groundTile;
