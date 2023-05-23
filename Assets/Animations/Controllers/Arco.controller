@@ -11,7 +11,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 2082519897861290482}
-    m_Position: {x: 320, y: 180, z: 0}
+    m_Position: {x: 340, y: 150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6635214043999200647}
     m_Position: {x: 320, y: -10, z: 0}
@@ -101,7 +101,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4eb047dde514b5a40b023ac8c7d2e390, type: 2}
+  m_Motion: {fileID: 7400000, guid: ba9a014e9e0ac564cbfc4199ee69c783, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -113,7 +113,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Baston
+  m_Name: Arco
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -188,7 +188,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6ede0b81c3f09e448bcaf2426d69d17c, type: 2}
+  m_Motion: {fileID: 7400000, guid: fbca0dff66128b749a5389f0f2084a49, type: 2}
   m_Tag: 
   m_SpeedParameter: Speed
   m_MirrorParameter: 

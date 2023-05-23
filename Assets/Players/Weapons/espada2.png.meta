@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dca4c33ef928be74494b827f807b2128
+guid: 0c2a991ec9e9c4a47bb11809f9868640
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: baston_0
+      name: espada2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 14
-        height: 33
+        width: 24
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7f1518be5ca3f24eaa8e7b8d3a4a142
-      internalID: 1070618441
+      spriteID: ed2f0b4c436c224459d1bdeb890ddd94
+      internalID: 1640155339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baston_1
+      name: espada2_1
       rect:
         serializedVersion: 2
-        x: 14
+        x: 24
         y: 0
-        width: 14
-        height: 33
+        width: 24
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 459eb76cf194fcb40b1dc63bee8e6485
-      internalID: 911573389
+      spriteID: 4ce1e1e5ce420484ca7c75ff468c3295
+      internalID: -2091864352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baston_2
+      name: espada2_2
       rect:
         serializedVersion: 2
-        x: 28
+        x: 48
         y: 0
-        width: 14
-        height: 33
+        width: 24
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee5161abc5032bf4099d40c8653a1666
-      internalID: -799980676
+      spriteID: 11d1292202c3c944f9a706514d550d88
+      internalID: 1289807706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: baston_3
+      name: espada2_3
       rect:
         serializedVersion: 2
-        x: 42
+        x: 72
         y: 0
-        width: 14
-        height: 33
+        width: 24
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36912ffc39e94c9498bb9fa64f72e030
-      internalID: -873674403
+      spriteID: 358cb83261c25ef4fbaafd0a156a0ca0
+      internalID: -2066460485
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      baston_0: 1070618441
-      baston_1: 911573389
-      baston_2: -799980676
-      baston_3: -873674403
+      espada2_0: 1640155339
+      espada2_1: -2091864352
+      espada2_2: 1289807706
+      espada2_3: -2066460485
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

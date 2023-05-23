@@ -536,7 +536,7 @@ GameObject:
   - component: {fileID: 207233436}
   - component: {fileID: 207233435}
   m_Layer: 5
-  m_Name: Options
+  m_Name: Join
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 88501ce633d8f5c428ecc72ef307f4fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fcb4cc5ae5a3d347b09df2a710ff25f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1066,7 +1066,7 @@ GameObject:
   - component: {fileID: 990457984}
   - component: {fileID: 990457983}
   m_Layer: 5
-  m_Name: Exit
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,13 +1136,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1426402177}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: TransitionToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: db670e70c5611494d8bb4c8fbb6eafcd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd720d83602b93f4cb603670d9271e75, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1213,7 +1213,7 @@ GameObject:
   - component: {fileID: 1204559751}
   - component: {fileID: 1204559750}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Host
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 314912838f65b3e4db856fb19edbcaa0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4a85a053355504f48855aa549852365a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 88501ce633d8f5c428ecc72ef307f4fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d56dd9fa47b02f469c581ed17960500, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

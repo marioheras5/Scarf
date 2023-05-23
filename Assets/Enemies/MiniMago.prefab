@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followingPlayer: {fileID: 0}
-  speed: 0
+  speed: 1
   damage: 5
   knockbacking: 0
   animator: {fileID: 7341040538673196709}
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6519999e80c2b194994d44da63753bb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadSound: {fileID: 0}
   health: 50
   healthBar: {fileID: 0}
   invincibilityTime: 0

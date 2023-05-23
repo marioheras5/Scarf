@@ -6,10 +6,6 @@ using UnityEngine.Tilemaps;
 
 public class MapGenerator : MonoBehaviour
 {
-    // Enemigos
-    List<Vector3Int> enemies;
-
-
     // Grounds
     public Tilemap groundTilemap;
     public TileBase groundTile;
@@ -21,8 +17,6 @@ public class MapGenerator : MonoBehaviour
     public TileBase addonsTile1;
     public TileBase addonsTile2;
 
-    public GameObject chest;
-
     // Walls
     public Tilemap wallTilemap;
     public TileBase wallTile;
@@ -30,23 +24,32 @@ public class MapGenerator : MonoBehaviour
     public int maxX;
     public int maxY;
 
-    int cont = 1500;
+
+    int probabilityCont = 1500;
     int[,] map;
 
-    
+    // Enemigos
+    List<Vector3Int> enemies;
+    public int numEnemigos = 5;
+
+    // Cofres
+    List<Vector3Int> cofres;
+    public int numCofres = 5;
 
     private void Start()
     {
         enemies = new();
+        cofres = new();
         map = new int[maxX * 2, maxY * 2];
         GenerateLevel();
-        GetComponent<GameManager>().GenerarEnemigos(enemies);
     }
 
     void GenerateLevel()
     {
         GenerateGround();
         PaintTerrain();
+        SpawnearEnemigos();
+        SpawnearCofres();
     }
     void GenerateGround()
     {
@@ -61,12 +64,12 @@ public class MapGenerator : MonoBehaviour
             {
                 continue;
             }
-            cont -= 10;
+            probabilityCont -= 10;
             map[pos[0] + maxX, pos[1] + maxY] = 1;
 
             TileBase tile;
-            int num = new System.Random().Next(0, 300);
-            switch (num)
+            int randomNum = new System.Random().Next(0, 300);
+            switch (randomNum)
             {
                 case 0:
                 case 1:
@@ -82,19 +85,11 @@ public class MapGenerator : MonoBehaviour
                     break;
                 case 8:
                     tile = groundTile;
-                    Instantiate(chest, new Vector3Int(pos[0], pos[1], 1), Quaternion.identity);
+                    addonsTilemap.SetTile(new Vector3Int(pos[0], pos[1], 1), addonsTile1);
                     break;
                 case 9:
                     tile = groundTile;
-                    addonsTilemap.SetTile(new Vector3Int(pos[0], pos[1], 1), addonsTile1);
-                    break;
-                case 10:
-                    tile = groundTile;
                     addonsTilemap.SetTile(new Vector3Int(pos[0], pos[1], 1), addonsTile2);
-                    break;
-                case 11:
-                    tile = groundTile;
-                    enemies.Add(new Vector3Int(pos[0], pos[1], 1));
                     break;
                 default:
                     tile = groundTile;
@@ -102,30 +97,29 @@ public class MapGenerator : MonoBehaviour
             }
             groundTilemap.SetTile(new Vector3Int(pos[0], pos[1], 2), tile);
 
-            if (pos[0] + 1 < maxX && RandomDice())
+            if (pos[0] + 1 < maxX && RandomProbability())
             {
                 queue.Enqueue(new int[] { pos[0] + 1, pos[1]});
             }
-            if (pos[0] - 1 > -maxX && RandomDice())
+            if (pos[0] - 1 > -maxX && RandomProbability())
             {
                 queue.Enqueue(new int[] { pos[0] - 1, pos[1]});
             }
-            if (pos[1] + 1 < maxY && RandomDice())
+            if (pos[1] + 1 < maxY && RandomProbability())
             {
                 queue.Enqueue(new int[] { pos[0], pos[1] + 1 });
             }
-            if (pos[1] - 1 > -maxY && RandomDice())
+            if (pos[1] - 1 > -maxY && RandomProbability())
             {
                 queue.Enqueue(new int[] { pos[0], pos[1] - 1 });
             }
         }
     }
-    
-    bool RandomDice()
+    bool RandomProbability()
     {
-        int num = new System.Random().Next(0, Mathf.Max(cont, 2));
+        int num = new System.Random().Next(0, Mathf.Max(probabilityCont, 2));
 
-        int num2 = new System.Random().Next(0, Mathf.Max(cont, 2));
+        int num2 = new System.Random().Next(0, Mathf.Max(probabilityCont, 2));
 
         if (num == num2) return false;
         else return true;
@@ -157,5 +151,69 @@ public class MapGenerator : MonoBehaviour
                 wallTilemap.SetTile(new Vector3Int(i, j, 1), wallTile);
             }
         }
+    }
+    public void SpawnearEnemigos()
+    {
+        enemies.Clear();
+        int r1 = new System.Random().Next(0, map.GetLength(0));
+        int r2 = new System.Random().Next(0, map.GetLength(1));
+        for (int i = 0; i < numEnemigos; i++)
+        {
+            if (CheckMapPosition(r1, r2))
+            {
+                enemies.Add(new Vector3Int(r1 - maxX, r2 - maxY, 1));
+            }
+            else
+            {
+                i--;
+            }
+            r1 = new System.Random().Next(0, map.GetLength(0));
+            r2 = new System.Random().Next(0, map.GetLength(1));
+        }
+        GetComponent<GameManager>().GenerarEnemigos(enemies);
+    }
+    public void SpawnearCofres()
+    {
+        cofres.Clear();
+        int r1 = new System.Random().Next(0, map.GetLength(0));
+        int r2 = new System.Random().Next(0, map.GetLength(1));
+        for (int i = 0; i < numCofres; i++)
+        {
+            if (CheckMapPosition(r1, r2))
+            {
+                cofres.Add(new Vector3Int(r1 - maxX, r2 - maxY, 1));
+            }
+            else
+            {
+                i--;
+            }
+            r1 = new System.Random().Next(0, map.GetLength(0));
+            r2 = new System.Random().Next(0, map.GetLength(1));
+        }
+        GetComponent<GameManager>().GenerarCofres(cofres);
+    }
+    bool CheckMapPosition(int i, int j)
+    {
+        int numRows = map.GetLength(0);
+        int numCols = map.GetLength(1);
+
+        for (int row = i - 1; row <= i + 1; row++)
+        {
+            for (int col = j - 1; col <= j + 1; col++)
+            {
+                if (row >= 0 && row < numRows && col >= 0 && col < numCols)
+                {
+                    if (map[row, col] != 1)
+                    {
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

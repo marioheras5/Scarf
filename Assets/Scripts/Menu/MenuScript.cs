@@ -12,22 +12,17 @@ public class MenuScript : MonoBehaviour
     public GameObject menuButtons;
     public GameObject optionButtons;
 
-
+    bool delaying = false;
     int menuPhase = 0;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
+        if (delaying) return;
         if (menuPhase == 0)
         {
             // Fase actual: Titulo
             if (Input.GetKey(KeyCode.Return) || Input.GetMouseButton(0))
             {
-                menuPhase = 1;
                 TransitionToMenu();
             }
         }
@@ -54,20 +49,29 @@ public class MenuScript : MonoBehaviour
         title.SetActive(true);
         menuButtons.SetActive(false);
         optionButtons.SetActive(false);
+        StartCoroutine(Delay());
     }
-    void TransitionToMenu()
+    public void TransitionToMenu()
     {
         menuPhase = 1;
         title.SetActive(false);
         menuButtons.SetActive(true);
         optionButtons.SetActive(false);
+        StartCoroutine(Delay());
     }
-    void TransitionToOptions()
+    void TransitionToCoop()
     {
         menuPhase = 2;
         title.SetActive(false);
         menuButtons.SetActive(false);
         optionButtons.SetActive(true);
+        StartCoroutine(Delay());
+    }
+    IEnumerator Delay()
+    {
+        delaying = true;
+        yield return new WaitForSeconds(0.25f);
+        delaying = false;
     }
     public void StartButton()
     {
@@ -75,8 +79,7 @@ public class MenuScript : MonoBehaviour
     }
     public void OptionsButton()
     {
-        menuPhase = 2;
-        TransitionToOptions();
+        TransitionToCoop();
     }
     public void ExitButton()
     {
